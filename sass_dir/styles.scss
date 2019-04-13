@@ -1,4 +1,4 @@
- @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 
 $color-light: #F2F1FF;
 $color-mid: #707070;
@@ -22,11 +22,24 @@ a {
     :hover {
         color: $color-main-light;
     }
+    &.skip { 
+        position:absolute; 
+        left:-10000px; 
+        top:auto; 
+        width:1px; 
+        height:1px; 
+        overflow:hidden;
+        &:focus 
+        { 
+            position:static; 
+            width:auto; 
+            height:auto; 
+        } 
+    }
 }
-
 body {
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -37,6 +50,30 @@ body {
 footer {
     background-color: $color-dark;
     padding: 4rem;
+    display: flex;
+    #footer-info {
+        flex: 2;
+        color: $color-light;
+        margin-right: 3rem;
+        margin-left: 5rem;
+        a {
+            color: $color-accent;
+        }
+    }
+    #footer-nav {
+        flex: 1;
+        border-left: 1.5px solid $color-light;
+    }
+    ul {
+        list-style: none;        
+        a {
+            color: $color-light;
+            text-decoration: none;
+        }
+        li {
+            margin: 3px;
+        }
+    }
 }
 h1 {
     font-size: 3.2rem;
@@ -53,7 +90,7 @@ h2 {
     display: flex;
     max-height: 120px;
     > a {
-        padding: 2.5rem 3rem;
+        padding: 2.5rem 2rem 2.5rem 4rem;
     }
     ul {
         list-style: none;
@@ -101,7 +138,7 @@ html {
 }
 main {
     background-color: $color-light;
-    padding: 2.5rem 4rem 2.5rem 0rem;
+    padding: 2.5rem 4rem 4rem 0rem;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
