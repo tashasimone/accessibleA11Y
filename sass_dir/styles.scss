@@ -11,6 +11,19 @@ $color-accent-light: #FFFF50;
 $color-accent-dark: #AF9E00;
 $color-warning: #D54308;
 
+a {
+    color: $color-main;
+    :link {
+        color: $color-main;
+    }
+    :visited {
+        color: $color-main;
+    }
+    :hover {
+        color: $color-main-light;
+    }
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
@@ -47,15 +60,19 @@ h2 {
         li {
             width: 120px;
             height: 120px;
-            background-color: $color-light;
             margin: 3px 2px 0px 2px;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
             display: flex;
             flex-flow: column;
             justify-content: center;
             text-align: center;
             font-weight: 600;
+            &.active {
+                background-color: $color-light;
+                color: $color-main;
+                text-decoration: underline;
+                border-top-left-radius: 20px;
+                border-top-right-radius: 20px;
+            }
             a:link {
                 color: $color-dark;
                 text-decoration: none;
@@ -68,15 +85,10 @@ h2 {
                 color: $color-main;
                 text-decoration: underline;
             }
-            a:active, .active {
-                color: $color-main;
+            a:active {
+                color: $color-main-light;
                 text-decoration: underline;
             }
-            
-        }
-        .active {
-            color: $color-main;
-            text-decoration: underline;
         }
     }
 }
