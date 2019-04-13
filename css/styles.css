@@ -1,1 +1,68 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.3rem;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+footer {
+  background-color: #42414F;
+  padding: 4rem; }
+
+h1 {
+  font-size: 3.2rem;
+  color: #00786C;
+  font-weight: 700; }
+
+h2 {
+  font-size: 2.4rem;
+  color: #42414F;
+  font-weight: 600; }
+
+#header-nav {
+  display: flex;
+  max-height: 120px; }
+  #header-nav > a {
+    padding: 2.5rem 3rem; }
+  #header-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0; }
+    #header-nav ul li {
+      width: 120px;
+      height: 120px;
+      background-color: #F2F1FF;
+      margin: 3px 2px 0px 2px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      text-align: center;
+      font-weight: 600; }
+      #header-nav ul li a:link {
+        color: #42414F;
+        text-decoration: none; }
+      #header-nav ul li a:visited {
+        color: #42414F;
+        text-decoration: none; }
+      #header-nav ul li a:hover {
+        color: #00786C;
+        text-decoration: underline; }
+      #header-nav ul li a:active, #header-nav ul li .active {
+        color: #00786C;
+        text-decoration: underline; }
+    #header-nav ul .active {
+      color: #00786C;
+      text-decoration: underline; }
+
+html {
+  font-size: 62.5%; }
+
+main {
+  background-color: #F2F1FF;
+  padding: 4rem;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px; }
