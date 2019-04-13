@@ -13,13 +13,7 @@ $color-warning: #D54308;
 
 a {
     color: $color-main;
-    :link {
-        color: $color-main;
-    }
-    :visited {
-        color: $color-main;
-    }
-    :hover {
+    &:hover {
         color: $color-main-light;
     }
     &.skip { 
@@ -45,7 +39,7 @@ body {
 }
 .body-content {
     flex: 4;
-    margin-left: 3.5rem
+    margin-left: 3.5rem;
 }
 footer {
     background-color: $color-dark;
@@ -58,6 +52,9 @@ footer {
         margin-left: 5rem;
         a {
             color: $color-accent;
+            &:hover {
+                color: $color-accent-light;
+            }
         }
     }
     #footer-nav {
@@ -69,6 +66,10 @@ footer {
         a {
             color: $color-light;
             text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+                color: $color-accent-light;
+            }
         }
         li {
             margin: 3px;
@@ -84,6 +85,21 @@ h2 {
     font-size: 2.4rem;
     color: $color-dark;
     font-weight: 600;
+}
+h3 {
+    font-size: 2.0rem;
+    color: $color-main;
+    font-weight: 600;
+}
+h4 {
+    font-size: 1.6rem;
+    color: $color-mid;
+    font-weight: 700;
+}
+h5 {
+    font-size: 1.6rem;
+    color: $color-main;
+    font-weight: 400;
 }
 
 #header-nav {
@@ -171,6 +187,9 @@ main {
                 img {
                     margin-right: 8px;
                 }
+            }            
+            &:hover {
+                background-color: $color-mid;
             }
             &.active {
                 background-color: $color-accent;

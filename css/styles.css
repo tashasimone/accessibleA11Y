@@ -1,11 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
 a {
   color: #00786C; }
-  a :link {
-    color: #00786C; }
-  a :visited {
-    color: #00786C; }
-  a :hover {
+  a:hover {
     color: #48A89A; }
   a.skip {
     position: absolute;
@@ -40,6 +36,8 @@ footer {
     margin-left: 5rem; }
     footer #footer-info a {
       color: #E6D001; }
+      footer #footer-info a:hover {
+        color: #FFFF50; }
   footer #footer-nav {
     flex: 1;
     border-left: 1.5px solid #F2F1FF; }
@@ -48,6 +46,9 @@ footer {
     footer ul a {
       color: #F2F1FF;
       text-decoration: none; }
+      footer ul a:hover {
+        text-decoration: underline;
+        color: #FFFF50; }
     footer ul li {
       margin: 3px; }
 
@@ -60,6 +61,21 @@ h2 {
   font-size: 2.4rem;
   color: #42414F;
   font-weight: 600; }
+
+h3 {
+  font-size: 2.0rem;
+  color: #00786C;
+  font-weight: 600; }
+
+h4 {
+  font-size: 1.6rem;
+  color: #707070;
+  font-weight: 700; }
+
+h5 {
+  font-size: 1.6rem;
+  color: #00786C;
+  font-weight: 400; }
 
 #header-nav {
   display: flex;
@@ -137,6 +153,8 @@ main {
         align-content: center; }
         #side-nav ul li a img {
           margin-right: 8px; }
+      #side-nav ul li:hover {
+        background-color: #707070; }
       #side-nav ul li.active {
         background-color: #E6D001; }
         #side-nav ul li.active a {
