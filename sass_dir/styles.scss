@@ -30,6 +30,10 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+.body-content {
+    flex: 4;
+    margin-left: 3.5rem
+}
 footer {
     background-color: $color-dark;
     padding: 4rem;
@@ -97,7 +101,46 @@ html {
 }
 main {
     background-color: $color-light;
-    padding: 4rem;    
+    padding: 2.5rem 4rem 2.5rem 0rem;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    display: flex;
+}
+#side-nav {
+    flex: 1;
+    height: inherit;
+    background-color: $color-dark;
+    color: $color-accent;     
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    ul {
+        list-style: none;
+        padding: 5px 20px 20px 25px;
+        li {
+            width: 220px;
+            height: 50px;
+            border: 1.5px solid $color-accent;
+            border-radius: 20px;
+            margin: 1.5rem 1rem;
+            font-weight: 600;
+            font-size: 2.0rem;
+            box-sizing: border-box;
+            padding: 1rem;
+            a {
+                text-decoration: none;
+                color: $color-accent;
+                display: flex;
+                align-content: center;
+                img {
+                    margin-right: 8px;
+                }
+            }
+            &.active {
+                background-color: $color-accent;
+                a {
+                   color: $color-dark;
+                }
+            }
+        }
+    }
 }
