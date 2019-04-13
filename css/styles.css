@@ -24,6 +24,9 @@ body {
 .body-content {
   flex: 4;
   margin-left: 3.5rem; }
+  @media only screen and (max-width: 400px) {
+    .body-content {
+      flex: 1; } }
 
 footer {
   background-color: #42414F;
@@ -80,29 +83,53 @@ h5 {
 #header-nav {
   display: flex;
   max-height: 120px; }
+  @media only screen and (max-width: 400px) {
+    #header-nav {
+      flex-flow: row wrap;
+      max-height: none; } }
   #header-nav > a {
     padding: 2.5rem 2rem 2.5rem 4rem; }
+    @media only screen and (max-width: 400px) {
+      #header-nav > a > img {
+        flex: 100%;
+        width: 40%;
+        margin: 0 auto; } }
   #header-nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
     margin: 0;
     padding: 0; }
+    @media only screen and (max-width: 400px) {
+      #header-nav ul {
+        flex-flow: row wrap;
+        flex: 3; } }
     #header-nav ul li {
       width: 120px;
       height: 120px;
       margin: 3px 2px 0px 2px;
       display: flex;
-      flex-flow: column;
+      flex-flow: row nowrap;
       justify-content: center;
       text-align: center;
       font-weight: 600; }
+      @media only screen and (max-width: 400px) {
+        #header-nav ul li {
+          margin: 0;
+          padding: .5rem;
+          height: 5rem;
+          width: 7rem; }
+          #header-nav ul li a > img {
+            width: 2rem; } }
       #header-nav ul li.active {
         background-color: #F2F1FF;
         color: #00786C;
         text-decoration: underline;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px; }
+        @media only screen and (max-width: 400px) {
+          #header-nav ul li.active {
+            border-radius: 10px; } }
       #header-nav ul li a:link {
         color: #42414F;
         text-decoration: none; }
@@ -115,6 +142,8 @@ h5 {
       #header-nav ul li a:active {
         color: #48A89A;
         text-decoration: underline; }
+      #header-nav ul li img {
+        width: 50px; }
 
 html {
   font-size: 62.5%; }
@@ -125,6 +154,10 @@ main {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   display: flex; }
+  @media only screen and (max-width: 400px) {
+    main {
+      flex-flow: row wrap;
+      padding: 0 0 3rem 0; } }
 
 #side-nav {
   flex: 1;
@@ -133,9 +166,16 @@ main {
   color: #E6D001;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px; }
+  @media only screen and (max-width: 400px) {
+    #side-nav {
+      border-radius: 20px; } }
   #side-nav ul {
     list-style: none;
     padding: 5px 20px 20px 25px; }
+    @media only screen and (max-width: 400px) {
+      #side-nav ul {
+        padding: 1rem 2rem;
+        margin: 0; } }
     #side-nav ul li {
       width: 220px;
       height: 50px;
@@ -146,13 +186,25 @@ main {
       font-size: 2.0rem;
       box-sizing: border-box;
       padding: 1rem; }
+      @media only screen and (max-width: 400px) {
+        #side-nav ul li {
+          width: 90%;
+          height: 2.5rem;
+          margin: .5rem;
+          font-size: 1.4rem;
+          padding: 0;
+          border: none; } }
       #side-nav ul li a {
         text-decoration: none;
         color: #E6D001;
         display: flex;
         align-content: center; }
         #side-nav ul li a img {
-          margin-right: 8px; }
+          margin-right: 8px;
+          width: 32px; }
+          @media only screen and (max-width: 400px) {
+            #side-nav ul li a img {
+              width: 2rem; } }
       #side-nav ul li:hover {
         background-color: #707070; }
       #side-nav ul li.active {
