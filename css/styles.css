@@ -14,6 +14,10 @@ body {
   max-width: 1200px;
   margin: 0 auto; }
 
+.body-content {
+  flex: 4;
+  margin-left: 3.5rem; }
+
 footer {
   background-color: #42414F;
   padding: 4rem; }
@@ -72,6 +76,39 @@ html {
 
 main {
   background-color: #F2F1FF;
-  padding: 4rem;
+  padding: 2.5rem 4rem 2.5rem 0rem;
   border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex; }
+
+#side-nav {
+  flex: 1;
+  height: inherit;
+  background-color: #42414F;
+  color: #E6D001;
+  border-bottom-right-radius: 20px;
   border-top-right-radius: 20px; }
+  #side-nav ul {
+    list-style: none;
+    padding: 5px 20px 20px 25px; }
+    #side-nav ul li {
+      width: 220px;
+      height: 50px;
+      border: 1.5px solid #E6D001;
+      border-radius: 20px;
+      margin: 1.5rem 1rem;
+      font-weight: 600;
+      font-size: 2.0rem;
+      box-sizing: border-box;
+      padding: 1rem; }
+      #side-nav ul li a {
+        text-decoration: none;
+        color: #E6D001;
+        display: flex;
+        align-content: center; }
+        #side-nav ul li a img {
+          margin-right: 8px; }
+      #side-nav ul li.active {
+        background-color: #E6D001; }
+        #side-nav ul li.active a {
+          color: #42414F; }
