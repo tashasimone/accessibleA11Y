@@ -28,6 +28,9 @@ body {
     .body-content {
       margin-left: 1rem;
       padding-top: 1rem; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    .body-content {
+      margin-left: 2rem; } }
 
 footer {
   background-color: #42414F;
@@ -63,6 +66,10 @@ footer {
           max-height: 110px;
           justify-content: space-evenly;
           padding-left: 1rem; } }
+  footer .skip {
+    color: #F2F1FF; }
+    footer .skip:hover {
+      color: #FFFF50; }
   footer ul {
     list-style: none; }
     footer ul a {
@@ -82,6 +89,10 @@ h1 {
     h1 {
       font-size: 2.2rem;
       margin: 1rem 0rem; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h1 {
+      font-size: 2.6rem;
+      margin: 1rem 0rem; } }
 
 h2 {
   font-size: 2.4rem;
@@ -90,6 +101,10 @@ h2 {
   @media only screen and (max-width: 400px) {
     h2 {
       font-size: 2.0rem;
+      margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h2 {
+      font-size: 2.2rem;
       margin: .7rem 0 .5rem 0; } }
 
 h3 {
@@ -100,12 +115,19 @@ h3 {
     h3 {
       font-size: 1.8rem;
       margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h3 {
+      font-size: 2.0rem;
+      margin: .7rem 0 .5rem 0; } }
 
 h4 {
   font-size: 1.6rem;
   color: #42414F;
   font-weight: 700; }
   @media only screen and (max-width: 400px) {
+    h4 {
+      margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
     h4 {
       margin: .7rem 0 .5rem 0; } }
 
@@ -117,6 +139,10 @@ h5 {
     h5 {
       font-size: 1.4rem;
       margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h5 {
+      font-size: 1.6rem;
+      margin: .7rem 0 .5rem 0; } }
 
 #header-nav {
   display: flex;
@@ -125,6 +151,9 @@ h5 {
     #header-nav {
       flex-flow: row nowrap;
       max-height: none; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    #header-nav {
+      width: 100%; } }
   #header-nav > a {
     padding: 2.5rem 2rem 2.5rem 4rem; }
     @media only screen and (max-width: 400px) {
@@ -132,11 +161,19 @@ h5 {
         padding: 1rem;
         flex: 3;
         box-sizing: border-box; } }
+    @media only screen and (min-width: 401px) and (max-width: 1023px) {
+      #header-nav > a {
+        flex: 2;
+        padding: 1.5rem 2rem;
+        text-align: center; } }
     #header-nav > a > img {
       width: 16rem; }
       @media only screen and (max-width: 400px) {
         #header-nav > a > img {
           width: 100%; } }
+      @media only screen and (min-width: 401px) and (max-width: 1023px) {
+        #header-nav > a > img {
+          width: 75%; } }
   #header-nav ul {
     list-style: none;
     display: flex;
@@ -149,6 +186,10 @@ h5 {
         flex: 6;
         max-height: 140px;
         margin: 1rem; } }
+    @media only screen and (min-width: 401px) and (max-width: 1023px) {
+      #header-nav ul {
+        flex: 7;
+        height: 10rem; } }
     #header-nav ul li {
       width: 120px;
       height: 120px;
@@ -171,6 +212,13 @@ h5 {
             display: none; }
           #header-nav ul li br {
             display: none; } }
+      @media only screen and (min-width: 401px) and (max-width: 1023px) {
+        #header-nav ul li {
+          flex: 1;
+          width: inherit;
+          height: inherit; }
+          #header-nav ul li a img {
+            width: inherit; } }
       #header-nav ul li.active {
         background-color: #F2F1FF;
         color: #00786C;
@@ -226,6 +274,9 @@ main {
       #side-nav ul {
         padding: 1rem 2rem;
         margin: 0; } }
+    @media only screen and (min-width: 401px) and (max-width: 1023px) {
+      #side-nav ul {
+        padding: .5rem; } }
     #side-nav ul li {
       width: 220px;
       height: 50px;
@@ -239,20 +290,28 @@ main {
       @media only screen and (max-width: 400px) {
         #side-nav ul li {
           width: 90%;
-          height: 2.5rem;
-          margin: .5rem;
+          height: 2.7rem;
+          margin: .4rem;
           font-size: 1.4rem;
-          padding: 0;
+          padding: 2px 0 0 0;
           border: none; } }
+      @media only screen and (min-width: 401px) and (max-width: 1023px) {
+        #side-nav ul li {
+          width: 90%;
+          height: 4.5rem;
+          font-size: 1.6rem; } }
       #side-nav ul li a {
         text-decoration: none;
         color: #E6D001;
         display: flex;
         align-content: center; }
         #side-nav ul li a img {
-          margin-right: 8px;
-          width: 32px; }
+          margin-right: 8px; }
           @media only screen and (max-width: 400px) {
+            #side-nav ul li a img {
+              width: inherit;
+              margin-left: 1rem; } }
+          @media only screen and (min-width: 401px) and (max-width: 1023px) {
             #side-nav ul li a img {
               width: inherit; } }
       #side-nav ul li:hover {

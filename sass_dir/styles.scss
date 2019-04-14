@@ -66,6 +66,9 @@ body {
         margin-left: 1rem;
         padding-top: 1rem;
     }
+    @include respond-to(tablet) {
+        margin-left: 2rem;
+    }
 }
 footer {
     background-color: $color-dark;
@@ -104,6 +107,12 @@ footer {
             }
         }
     }
+    .skip {
+        color: $color-light;
+        &:hover {
+            color: $color-accent-light;
+        }
+    }
     ul {
         list-style: none;        
         a {
@@ -121,27 +130,56 @@ footer {
 }
 h1 {
     @include set-type(3.2rem, $color-main, 700);
-    @include respond-to(phone) { font-size: 2.2rem; 
-        margin: 1rem 0rem;}
+    @include respond-to(phone) { 
+        font-size: 2.2rem; 
+        margin: 1rem 0rem;
+    }
+    @include respond-to(tablet) { 
+        font-size: 2.6rem; 
+        margin: 1rem 0rem;
+    }
 }
 h2 {
     @include set-type(2.4rem, $color-dark, 600);
-    @include respond-to(phone) { font-size: 2.0rem; 
-        margin: .7rem 0 .5rem 0;}
+    @include respond-to(phone) { 
+        font-size: 2.0rem; 
+        margin: .7rem 0 .5rem 0;
+    }
+    @include respond-to(tablet) { 
+        font-size: 2.2rem; 
+        margin: .7rem 0 .5rem 0;
+    }
 }
 h3 {
     @include set-type(2.0rem, $color-main, 600);
-    @include respond-to(phone) { font-size: 1.8rem; 
-        margin: .7rem 0 .5rem 0;}
+    @include respond-to(phone) { 
+        font-size: 1.8rem; 
+        margin: .7rem 0 .5rem 0;
+    }
+    @include respond-to(tablet) { 
+        font-size: 2.0rem; 
+        margin: .7rem 0 .5rem 0;
+    }
 }
 h4 {
     @include set-type(1.6rem, $color-dark, 700);
-    @include respond-to(phone) { margin: .7rem 0 .5rem 0;}
+    @include respond-to(phone) { 
+        margin: .7rem 0 .5rem 0;
+    }
+    @include respond-to(tablet) {
+        margin: .7rem 0 .5rem 0;
+    }
 }
 h5 {
     @include set-type(1.6rem, $color-main, 400);
-    @include respond-to(phone) { font-size: 1.4rem; 
-        margin: .7rem 0 .5rem 0;}
+    @include respond-to(phone) { 
+        font-size: 1.4rem; 
+        margin: .7rem 0 .5rem 0;
+    }
+    @include respond-to(tablet) { 
+        font-size: 1.6rem; 
+        margin: .7rem 0 .5rem 0;
+    }
 }
 
 #header-nav {
@@ -151,6 +189,9 @@ h5 {
         flex-flow: row nowrap; 
         max-height: none;
     }
+    @include respond-to(tablet) {
+        width: 100%;
+    }
     > a {
         padding: 2.5rem 2rem 2.5rem 4rem;
         @include respond-to(phone) {
@@ -158,10 +199,18 @@ h5 {
             flex: 3;
             box-sizing: border-box;
         }
+        @include respond-to(tablet) {
+            flex: 2;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
         > img {
             width: 16rem;
             @include respond-to(phone) {
                 width: 100%;
+            }
+            @include respond-to(tablet) {
+                width: 75%;
             }
         }
     }
@@ -176,6 +225,10 @@ h5 {
             flex: 6;
             max-height: 140px;
             margin: 1rem;
+        }
+        @include respond-to(tablet) {
+            flex: 7;
+            height: 10rem;
         }
         li {
             width: 120px;
@@ -194,9 +247,16 @@ h5 {
                 margin: 0;
                 box-sizing: border-box;
                 padding: 0rem 1rem;
-
                 a>img { display: none; }
                 br { display: none; }
+            }
+            @include respond-to(tablet) {
+                flex: 1;
+                width: inherit;
+                height: inherit;
+                a img {
+                    width: inherit;
+                }
             }
             &.active {
                 background-color: $color-light;
@@ -233,9 +293,6 @@ h5 {
 html {
     font-size: 62.5%;
 }
-
-
-
 main {
     background-color: $color-light;
     padding: 2.5rem 4rem 4rem 0rem;
@@ -264,6 +321,9 @@ main {
             padding: 1rem 2rem;
             margin: 0;
         }
+        @include respond-to(tablet) {
+            padding: .5rem;
+        }
         li {
             width: 220px;
             height: 50px;
@@ -276,11 +336,16 @@ main {
             padding: 1rem;
             @include respond-to(phone) {
                 width: 90%;
-                height: 2.5rem;
-                margin: .5rem;
+                height: 2.7rem;
+                margin: .4rem;
                 font-size: 1.4rem;
-                padding: 0;
+                padding: 2px 0 0 0;
                 border: none;
+            }
+            @include respond-to(tablet) {
+                width: 90%;
+                height: 4.5rem;
+                font-size: 1.6rem;
             }
             a {
                 text-decoration: none;
@@ -289,8 +354,11 @@ main {
                 align-content: center;
                 img {
                     margin-right: 8px;
-                    width: 32px;
                     @include respond-to(phone) {
+                        width: inherit;
+                        margin-left: 1rem;
+                    }
+                    @include respond-to(tablet) {
                         width: inherit;
                     }
                 }
