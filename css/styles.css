@@ -28,6 +28,9 @@ body {
     .body-content {
       margin-left: 1rem;
       padding-top: 1rem; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    .body-content {
+      margin-left: 2rem; } }
 
 footer {
   background-color: #42414F;
@@ -86,6 +89,10 @@ h1 {
     h1 {
       font-size: 2.2rem;
       margin: 1rem 0rem; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h1 {
+      font-size: 2.6rem;
+      margin: 1rem 0rem; } }
 
 h2 {
   font-size: 2.4rem;
@@ -94,6 +101,10 @@ h2 {
   @media only screen and (max-width: 400px) {
     h2 {
       font-size: 2.0rem;
+      margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h2 {
+      font-size: 2.2rem;
       margin: .7rem 0 .5rem 0; } }
 
 h3 {
@@ -104,12 +115,19 @@ h3 {
     h3 {
       font-size: 1.8rem;
       margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h3 {
+      font-size: 2.0rem;
+      margin: .7rem 0 .5rem 0; } }
 
 h4 {
   font-size: 1.6rem;
   color: #42414F;
   font-weight: 700; }
   @media only screen and (max-width: 400px) {
+    h4 {
+      margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
     h4 {
       margin: .7rem 0 .5rem 0; } }
 
@@ -120,6 +138,10 @@ h5 {
   @media only screen and (max-width: 400px) {
     h5 {
       font-size: 1.4rem;
+      margin: .7rem 0 .5rem 0; } }
+  @media only screen and (min-width: 401px) and (max-width: 1023px) {
+    h5 {
+      font-size: 1.6rem;
       margin: .7rem 0 .5rem 0; } }
 
 #header-nav {
@@ -252,6 +274,9 @@ main {
       #side-nav ul {
         padding: 1rem 2rem;
         margin: 0; } }
+    @media only screen and (min-width: 401px) and (max-width: 1023px) {
+      #side-nav ul {
+        padding: .5rem; } }
     #side-nav ul li {
       width: 220px;
       height: 50px;
@@ -270,6 +295,11 @@ main {
           font-size: 1.4rem;
           padding: 2px 0 0 0;
           border: none; } }
+      @media only screen and (min-width: 401px) and (max-width: 1023px) {
+        #side-nav ul li {
+          width: 90%;
+          height: 4.5rem;
+          font-size: 1.6rem; } }
       #side-nav ul li a {
         text-decoration: none;
         color: #E6D001;
@@ -281,6 +311,9 @@ main {
             #side-nav ul li a img {
               width: inherit;
               margin-left: 1rem; } }
+          @media only screen and (min-width: 401px) and (max-width: 1023px) {
+            #side-nav ul li a img {
+              width: inherit; } }
       #side-nav ul li:hover {
         background-color: #707070; }
       #side-nav ul li.active {
