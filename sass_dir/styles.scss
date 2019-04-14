@@ -135,7 +135,7 @@ h3 {
         margin: .7rem 0 .5rem 0;}
 }
 h4 {
-    @include set-type(1.6rem, $color-mid, 700);
+    @include set-type(1.6rem, $color-dark, 700);
     @include respond-to(phone) { margin: .7rem 0 .5rem 0;}
 }
 h5 {
@@ -291,7 +291,7 @@ main {
                     margin-right: 8px;
                     width: 32px;
                     @include respond-to(phone) {
-                        width: 2rem;
+                        width: inherit;
                     }
                 }
             }            
