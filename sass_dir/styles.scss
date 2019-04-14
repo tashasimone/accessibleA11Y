@@ -26,6 +26,7 @@ $color-warning: #D54308;
   }
 }
 
+
 a {
     color: $color-main;
     &:hover {
@@ -64,11 +65,16 @@ footer {
     background-color: $color-dark;
     padding: 4rem;
     display: flex;
+    @include respond-to(phone) {
+        display: block;
+        padding: 1rem;
+    }
     #footer-info {
         flex: 2;
         color: $color-light;
         margin-right: 3rem;
         margin-left: 5rem;
+        @include respond-to(phone) { margin: 0 auto; }
         a {
             color: $color-accent;
             &:hover {
@@ -79,6 +85,18 @@ footer {
     #footer-nav {
         flex: 1;
         border-left: 1.5px solid $color-light;
+        @include respond-to(phone) {
+            border-left: none;
+            border-top: 1.5px solid $color-light;
+            margin-top: 2rem;
+            ul {
+                display: flex;
+                flex-flow: column wrap;
+                max-height: 110px;
+                justify-content: space-evenly;
+                padding-left: 1rem;
+            }
+        }
     }
     ul {
         list-style: none;        
@@ -125,18 +143,19 @@ h5 {
     display: flex;
     max-height: 120px;
     @include respond-to(phone) { 
-        flex-flow: row wrap; 
+        flex-flow: row nowrap; 
         max-height: none;
-        // br {
-        //     display: none;
-        // }
     }
     > a {
         padding: 2.5rem 2rem 2.5rem 4rem;
+        @include respond-to(phone) {
+            padding: 0;
+            flex: 30%
+        }
         > img {
+            width: 16rem;
             @include respond-to(phone) {
-                flex: 100%;
-                width: 40%;
+                width: 80%;
                 margin: 0 auto;
             }
         }
@@ -148,15 +167,16 @@ h5 {
         margin: 0;
         padding: 0;
         @include respond-to(phone) {
-            flex-flow: row wrap;
+            flex-flow: column wrap;
             flex: 3;
+            max-height: 200px;
         }
         li {
             width: 120px;
             height: 120px;
             margin: 3px 2px 0px 2px;
             display: flex;
-            flex-flow: row nowrap;
+            flex-flow: column;
             justify-content: center;
             text-align: center;
             font-weight: 600;
@@ -204,6 +224,9 @@ h5 {
 html {
     font-size: 62.5%;
 }
+
+
+
 main {
     background-color: $color-light;
     padding: 2.5rem 4rem 4rem 0rem;
@@ -216,6 +239,24 @@ main {
     }
 }
 #side-nav {
+
+    @include respond-to(phone) {
+        // z-index: 1;
+        // position: absolute;
+        // #sidenavButton:checked ~ nav {
+        //     transform: translateX(0);
+        //     transition: all 0.3s ease-out;
+        // }
+        // #sidenavButton:checked ~ nav>ul>li {
+        //     opacity: 1;
+        //     transform: translateX(0);
+        //     transition: all 0.6s ease-out;
+        // }
+        // #sidenavButton {
+        //     display: none;
+        // }
+    }
+    
     flex: 1;
     height: inherit;
     background-color: $color-dark;

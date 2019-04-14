@@ -32,11 +32,18 @@ footer {
   background-color: #42414F;
   padding: 4rem;
   display: flex; }
+  @media only screen and (max-width: 400px) {
+    footer {
+      display: block;
+      padding: 1rem; } }
   footer #footer-info {
     flex: 2;
     color: #F2F1FF;
     margin-right: 3rem;
     margin-left: 5rem; }
+    @media only screen and (max-width: 400px) {
+      footer #footer-info {
+        margin: 0 auto; } }
     footer #footer-info a {
       color: #E6D001; }
       footer #footer-info a:hover {
@@ -44,6 +51,17 @@ footer {
   footer #footer-nav {
     flex: 1;
     border-left: 1.5px solid #F2F1FF; }
+    @media only screen and (max-width: 400px) {
+      footer #footer-nav {
+        border-left: none;
+        border-top: 1.5px solid #F2F1FF;
+        margin-top: 2rem; }
+        footer #footer-nav ul {
+          display: flex;
+          flex-flow: column wrap;
+          max-height: 110px;
+          justify-content: space-evenly;
+          padding-left: 1rem; } }
   footer ul {
     list-style: none; }
     footer ul a {
@@ -85,15 +103,20 @@ h5 {
   max-height: 120px; }
   @media only screen and (max-width: 400px) {
     #header-nav {
-      flex-flow: row wrap;
+      flex-flow: row nowrap;
       max-height: none; } }
   #header-nav > a {
     padding: 2.5rem 2rem 2.5rem 4rem; }
     @media only screen and (max-width: 400px) {
-      #header-nav > a > img {
-        flex: 100%;
-        width: 40%;
-        margin: 0 auto; } }
+      #header-nav > a {
+        padding: 0;
+        flex: 30%; } }
+    #header-nav > a > img {
+      width: 16rem; }
+      @media only screen and (max-width: 400px) {
+        #header-nav > a > img {
+          width: 80%;
+          margin: 0 auto; } }
   #header-nav ul {
     list-style: none;
     display: flex;
@@ -102,14 +125,15 @@ h5 {
     padding: 0; }
     @media only screen and (max-width: 400px) {
       #header-nav ul {
-        flex-flow: row wrap;
-        flex: 3; } }
+        flex-flow: column wrap;
+        flex: 3;
+        max-height: 200px; } }
     #header-nav ul li {
       width: 120px;
       height: 120px;
       margin: 3px 2px 0px 2px;
       display: flex;
-      flex-flow: row nowrap;
+      flex-flow: column;
       justify-content: center;
       text-align: center;
       font-weight: 600; }
