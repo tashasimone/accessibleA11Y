@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
 
+$break-small: 400px;
+$break-large: 1024px;
+
 $color-light: #F2F1FF;
 $color-mid: #707070;
 $color-dark: #42414F;
@@ -10,6 +13,25 @@ $color-accent: #E6D001;
 $color-accent-light: #FFFF50;
 $color-accent-dark: #AF9E00;
 $color-warning: #D54308;
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media only screen and (max-width: $break-small) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (min-width: $break-large) { @content; }
+  }
+}
+
+@mixin set-type($size, $color, $weight) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+}
+
 
 a {
     color: $color-main;
@@ -40,16 +62,25 @@ body {
 .body-content {
     flex: 4;
     margin-left: 3.5rem;
+    @include respond-to(phone) { 
+        margin-left: 1rem;
+        padding-top: 1rem;
+    }
 }
 footer {
     background-color: $color-dark;
     padding: 4rem;
     display: flex;
+    @include respond-to(phone) {
+        display: block;
+        padding: 1rem;
+    }
     #footer-info {
         flex: 2;
         color: $color-light;
         margin-right: 3rem;
         margin-left: 5rem;
+        @include respond-to(phone) { margin: 0 auto; }
         a {
             color: $color-accent;
             &:hover {
@@ -60,6 +91,18 @@ footer {
     #footer-nav {
         flex: 1;
         border-left: 1.5px solid $color-light;
+        @include respond-to(phone) {
+            border-left: none;
+            border-top: 1.5px solid $color-light;
+            margin-top: 2rem;
+            ul {
+                display: flex;
+                flex-flow: column wrap;
+                max-height: 110px;
+                justify-content: space-evenly;
+                padding-left: 1rem;
+            }
+        }
     }
     ul {
         list-style: none;        
@@ -77,36 +120,50 @@ footer {
     }
 }
 h1 {
-    font-size: 3.2rem;
-    color: $color-main;
-    font-weight: 700;
+    @include set-type(3.2rem, $color-main, 700);
+    @include respond-to(phone) { font-size: 2.2rem; 
+        margin: 1rem 0rem;}
 }
 h2 {
-    font-size: 2.4rem;
-    color: $color-dark;
-    font-weight: 600;
+    @include set-type(2.4rem, $color-dark, 600);
+    @include respond-to(phone) { font-size: 2.0rem; 
+        margin: .7rem 0 .5rem 0;}
 }
 h3 {
-    font-size: 2.0rem;
-    color: $color-main;
-    font-weight: 600;
+    @include set-type(2.0rem, $color-main, 600);
+    @include respond-to(phone) { font-size: 1.8rem; 
+        margin: .7rem 0 .5rem 0;}
 }
 h4 {
-    font-size: 1.6rem;
-    color: $color-mid;
-    font-weight: 700;
+    @include set-type(1.6rem, $color-mid, 700);
+    @include respond-to(phone) { margin: .7rem 0 .5rem 0;}
 }
 h5 {
-    font-size: 1.6rem;
-    color: $color-main;
-    font-weight: 400;
+    @include set-type(1.6rem, $color-main, 400);
+    @include respond-to(phone) { font-size: 1.4rem; 
+        margin: .7rem 0 .5rem 0;}
 }
 
 #header-nav {
     display: flex;
     max-height: 120px;
+    @include respond-to(phone) { 
+        flex-flow: row nowrap; 
+        max-height: none;
+    }
     > a {
         padding: 2.5rem 2rem 2.5rem 4rem;
+        @include respond-to(phone) {
+            padding: 1rem;
+            flex: 3;
+            box-sizing: border-box;
+        }
+        > img {
+            width: 16rem;
+            @include respond-to(phone) {
+                width: 100%;
+            }
+        }
     }
     ul {
         list-style: none;
@@ -114,6 +171,12 @@ h5 {
         justify-content: center;
         margin: 0;
         padding: 0;
+        @include respond-to(phone) {
+            flex-flow: column wrap;
+            flex: 6;
+            max-height: 140px;
+            margin: 1rem;
+        }
         li {
             width: 120px;
             height: 120px;
@@ -123,12 +186,27 @@ h5 {
             justify-content: center;
             text-align: center;
             font-weight: 600;
+            @include respond-to(phone) {
+                height: 3rem;
+                width: 10rem;
+                text-align: start;
+                line-height: 4;
+                margin: 0;
+                box-sizing: border-box;
+                padding: 0rem 1rem;
+
+                a>img { display: none; }
+                br { display: none; }
+            }
             &.active {
                 background-color: $color-light;
                 color: $color-main;
                 text-decoration: underline;
                 border-top-left-radius: 20px;
                 border-top-right-radius: 20px;
+                @include respond-to(phone) {
+                    border-radius: 10px;
+                }
             }
             a:link {
                 color: $color-dark;
@@ -146,18 +224,28 @@ h5 {
                 color: $color-main-light;
                 text-decoration: underline;
             }
+            img {
+                width: 50px;
+            }
         }
     }
 }
 html {
     font-size: 62.5%;
 }
+
+
+
 main {
     background-color: $color-light;
     padding: 2.5rem 4rem 4rem 0rem;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
+    @include respond-to(phone) { 
+        display: block;
+        padding: 0 0 3rem 0;
+    }
 }
 #side-nav {
     flex: 1;
@@ -166,9 +254,16 @@ main {
     color: $color-accent;     
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
+    @include respond-to(phone) {
+        border-radius: 20px;
+    }
     ul {
         list-style: none;
         padding: 5px 20px 20px 25px;
+        @include respond-to(phone) {
+            padding: 1rem 2rem;
+            margin: 0;
+        }
         li {
             width: 220px;
             height: 50px;
@@ -179,6 +274,14 @@ main {
             font-size: 2.0rem;
             box-sizing: border-box;
             padding: 1rem;
+            @include respond-to(phone) {
+                width: 90%;
+                height: 2.5rem;
+                margin: .5rem;
+                font-size: 1.4rem;
+                padding: 0;
+                border: none;
+            }
             a {
                 text-decoration: none;
                 color: $color-accent;
@@ -186,6 +289,10 @@ main {
                 align-content: center;
                 img {
                     margin-right: 8px;
+                    width: 32px;
+                    @include respond-to(phone) {
+                        width: 2rem;
+                    }
                 }
             }            
             &:hover {
