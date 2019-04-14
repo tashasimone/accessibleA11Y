@@ -140,6 +140,7 @@ h1 {
     }
 }
 h2 {
+    margin-bottom: 0;
     @include set-type(2.4rem, $color-dark, 600);
     @include respond-to(phone) { 
         font-size: 2.0rem; 
@@ -162,6 +163,7 @@ h3 {
     }
 }
 h4 {
+    margin-bottom: .5rem;
     @include set-type(1.6rem, $color-dark, 700);
     @include respond-to(phone) { 
         margin: .7rem 0 .5rem 0;
@@ -303,6 +305,9 @@ main {
         display: block;
         padding: 0 0 3rem 0;
     }
+}
+p {
+    margin-top: .5rem;
 }
 #side-nav {
     flex: 1;
